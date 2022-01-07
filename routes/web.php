@@ -4,6 +4,7 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\AssistanceController;
 use App\Http\Controllers\BeneficiaryController;
+use App\Http\Controllers\CityProgramController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\PositionController;
@@ -47,6 +48,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('groups',GroupController::class);
     Route::resource('assistance',AssistanceController::class);
     Route::get('removeBeneficiaryFromAssistance',[AssistanceController::class,'removeBeneficiary'])->name('assistance.removeBeneficiary');
+    Route::get('cityProgram/edit/{program}',[CityProgramController::class,'edit'])->name('cityProgram.edit');//(se leda un nombre a la ruta)lo que coloquen en la ruta despues del edit l oguarda en la variable program
+    Route::post('cityProgram',[CityProgramController::class,'store'])->name('cityProgram.store');//(se leda un nombre a la ruta)lo que coloquen en la ruta despues del edit l oguarda en la variable program
+    Route::get('cityProgram',[CityProgramController::class,'removeCity'])->name('cityProgram.removeCity');//(se leda un nombre a la ruta)lo que coloquen en la ruta despues del edit l oguarda en la variable program
     
     Route::prefix('stats')->group(function () {
         Route::get('user-types', [UserStatController::class,'userTypes']);

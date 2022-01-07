@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Program\CreateProgramRequest;
 use App\Models\Area;
+use App\Models\City;
 use App\Models\Program;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class ProgramController extends Controller
     public function create ()
     {
         $areas = Area::all();
-        return view('modules.programs.create',compact('areas'));
+        $cities = City::all();
+        return view('modules.programs.create',compact('areas','cities'));
     }
 
     public function store(CreateProgramRequest $request)
@@ -33,7 +35,8 @@ class ProgramController extends Controller
     {
         $areas = Area::all();
         $users = User::all();
-        return view('modules.programs.edit',compact('program','areas','users'));
+        $cities = City::all();
+        return view('modules.programs.edit',compact('program','areas','users','cities'));
     }
 
     public function update(CreateProgramRequest $request , Program $program)
@@ -75,5 +78,7 @@ class ProgramController extends Controller
         $program->users()->detach($user->id);
 
         return back();
+
+        
     }
 }

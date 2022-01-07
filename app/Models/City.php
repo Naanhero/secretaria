@@ -16,4 +16,9 @@ class City extends Model
     {
         return $this->hasMany(Beneficiary::class);
     }
+    
+    public function programs()
+    {
+        return $this->belongsToMany(Cities::class); // una ciudad contiene muchos programas
+    }
 }

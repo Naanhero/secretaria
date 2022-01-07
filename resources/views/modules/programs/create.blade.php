@@ -54,6 +54,17 @@
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
+            <div class="form-group col-sm-4">
+                <label for="inputState">Ciudad</label>
+                <select id="city_id" name="city_id"  class="form-control" value="{{ old('city_id') }}">
+                    @foreach ($cities as $city)
+                        <option value="{{ $city->id }}">{{ $city->name }}</option>   
+                    @endforeach
+                </select>
+                @error('city_id')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>
             <div class="form-group col-sm-12">
                 <label for="exampleFormControlTextarea1">Descripción</label>
                 <textarea class="form-control" id="description" name="description" rows="3">{{ old('description') }}</textarea>

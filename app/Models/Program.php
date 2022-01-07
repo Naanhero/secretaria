@@ -18,6 +18,11 @@ class Program extends Model
         return $this->belongsTo(Area::class);
     }
 
+    public function cities()
+    {
+        return $this->belongsToMany(City::class);
+    }
+
     public function activities()
     {
        return $this->hasMany(Activity::class); // un programa contiene muchas actividades
