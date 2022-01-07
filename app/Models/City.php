@@ -11,4 +11,9 @@ class City extends Model
 
     protected $fillable = ['name'];
     // protected $guarded = ['id'];
+
+    public function programs()
+    {
+        return $this->belongsToMany(Cities::class); // una ciudad contiene muchos programas
+    }
 }

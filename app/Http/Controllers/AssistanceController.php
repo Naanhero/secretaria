@@ -20,7 +20,7 @@ class AssistanceController extends Controller
         foreach ($assistance->beneficiaries as $beneficiary) {
             if ($beneficiary->id == $request->beneficiary_id) return back()->with('warning','Ya tiene asistencia');
         }
-        $assistance->beneficiaries()->attach($request->beneficiary_id);
+        $assistance->beneficiaries()->attach($request->beneficiary_id);//relacion de conexion entre los modelos
 
         return back()->with('success','Agregado');
     }

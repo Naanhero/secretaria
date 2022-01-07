@@ -40,9 +40,10 @@
                   @csrf
                   @method('DELETE')
 
-                    <a class="btn btn-warning" href="{{ route('programs.edit',['program'=>$program]) }}">Editar</a>
-                    <button class="btn btn-danger" type="submit">Eliminar</button>
-                    <a class="btn btn-info" href="{{ route('instructorProgram.instructorProgram',['program'=>$program->id]) }}">Instructores</a>
+                    <a class="btn btn-warning" href="{{ route('programs.edit',['program'=>$program]) }}"><i class="fas fa-edit"></i></a>
+                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                    <a class="btn btn-info" href="{{ route('instructorProgram.instructorProgram',['program'=>$program->id]) }}"><i class="fas fa-swimmer"></i></a>
+                    <a href="{{ route('cityProgram.edit',['program'=>$program->id]) }}" class="btn btn-success"><i class="fas fa-map-marked-alt"></i></a>
                   </form>
               </div>
           </td>
