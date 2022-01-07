@@ -20,4 +20,14 @@ class Beneficiary extends Model
     {
         return $this->belongsTo(EthnicGroup::class);
     }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class);
+    }
 }

@@ -11,6 +11,11 @@ class Gender extends Model
 
     public function users()
     {
-        $this->hasMany(User::class); //relacion de muchos n - traigo la clase del modelo User
+        return $this->hasMany(User::class); //relacion de muchos n - traigo la clase del modelo User
+    }
+
+    public function beneficiaries()
+    {
+        return $this->hasMany(Beneficiary::class);
     }
 }

@@ -51,6 +51,8 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('stats')->group(function () {
         Route::get('user-types', [UserStatController::class,'userTypes']);
         Route::get('beneficiary-for-ethnicgroups', [BeneficiaryStatController::class,'beneficiariesForEthnicGroups']);
+        Route::get('beneficiary-for-cities', [BeneficiaryStatController::class,'beneficiariesForCities']);
+        Route::get('beneficiary-for-genders', [BeneficiaryStatController::class,'beneficiariesForGenders']);
     });
     
 });

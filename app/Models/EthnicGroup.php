@@ -16,4 +16,9 @@ class EthnicGroup extends Model
     {
         return $this->HasMany(Beneficiary::class);
     }
+
+    public function beneficiariesByMonths()
+    {
+        return $this->HasMany(Beneficiary::class);
+    }
 }

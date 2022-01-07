@@ -11,4 +11,9 @@ class City extends Model
 
     protected $fillable = ['name'];
     // protected $guarded = ['id'];
+
+    public function beneficiaries()
+    {
+        return $this->hasMany(Beneficiary::class);
+    }
 }

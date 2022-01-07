@@ -318,9 +318,26 @@ return [
         ],
         ['header' => 'INFORMES'],
         [
-            'text'       => 'Tipos de Usuarios',
+            'text'       => 'Beneficiarios',
             'url'        => '/stats/user-types',
             'icon' => 'fas fa-users',
+            'submenu' => [
+                [
+                    'text'       => 'Por Grupo Etnico',
+                    'url'        => '/stats/beneficiary-for-ethnicgroups',
+                    'icon' => 'fas fa-campground',
+                ],
+                [
+                    'text'       => 'Por Ciudad',
+                    'url'        => '/stats/beneficiary-for-cities',
+                    'icon' => 'fas fa-city',
+                ],
+                [
+                    'text'       => 'Por Género',
+                    'url'        => '/stats/beneficiary-for-genders',
+                    'icon' => 'fas fa-venus-mars',
+                ]
+            ]
         ]
     ],
 
