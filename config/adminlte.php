@@ -316,6 +316,12 @@ return [
             'url'        => '/positions',
             'icon' => 'fas fa-award',
         ],
+        ['header' => 'INFORMES'],
+        [
+            'text'       => 'Tipos de Usuarios',
+            'url'        => '/stats/user-types',
+            'icon' => 'fas fa-users',
+        ]
     ],
 
     /*

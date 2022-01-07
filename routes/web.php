@@ -9,6 +9,7 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\Stats\BeneficiaryStatController;
 use App\Http\Controllers\Stats\UserStatController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -53,6 +54,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::prefix('stats')->group(function () {
         Route::get('user-types', [UserStatController::class,'userTypes']);
+        Route::get('beneficiary-for-ethnicgroups', [BeneficiaryStatController::class,'beneficiariesForEthnicGroups']);
     });
     
 });

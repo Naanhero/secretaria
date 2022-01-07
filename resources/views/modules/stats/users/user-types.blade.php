@@ -1,12 +1,19 @@
-@extends('layout.main')
-@section('content-title','Usuarios')
+@extends('adminlte::page')
+
+@section('content_header')
+    <h1>Estadistica - Tipos de Usuario</h1>
+@stop
  
 @section('content')
     <div id="container" style="width:100%; height:400px;"></div>
 @endsection
 
-@section('scripts')
+@section('js')
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+
     <script>
+        var dataChart = JSON.parse('<?php echo $data  ?>')
+
         Highcharts.chart('container', {
         chart: {
             plotBackgroundColor: null,
@@ -15,7 +22,7 @@
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares in January, 2018'
+            text: 'Tipos de Usuario'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -38,36 +45,7 @@
         series: [{
             name: 'Brands',
             colorByPoint: true,
-            data: [{
-                name: 'Chrome',
-                y: 61.41,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'Internet Explorer',
-                y: 11.84
-            }, {
-                name: 'Firefox',
-                y: 10.85
-            }, {
-                name: 'Edge',
-                y: 4.67
-            }, {
-                name: 'Safari',
-                y: 4.18
-            }, {
-                name: 'Sogou Explorer',
-                y: 1.64
-            }, {
-                name: 'Opera',
-                y: 1.6
-            }, {
-                name: 'QQ',
-                y: 1.2
-            }, {
-                name: 'Other',
-                y: 2.61
-            }]
+            data: dataChart
         }]
         });
     </script>

@@ -15,4 +15,9 @@ class Beneficiary extends Model
     {
         return $this->belongsToMany(Assistance::class);
     }
+
+    public function ethnicGroup()
+    {
+        return $this->belongsTo(EthnicGroup::class);
+    }
 }
