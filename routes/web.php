@@ -62,5 +62,6 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('/export/users', [ExcelController::class, 'UserExport']);
     Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport']);
+    Route::get('/export/activities', [ExcelController::class, 'ActivityExport']);
 });
 
