@@ -2,6 +2,9 @@
 
 @section('content_header')
     <h1>Beneficiarios</h1>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Excel</button>
+  </div>
 @stop
 
 @section('content')
