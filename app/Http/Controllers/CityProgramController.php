@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class CityProgramController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['can:programs.update'])->only(['edit','update']);
+    }
     public function edit(Program $program) //la variable busca en el modelo
     {
         $cities = City::all();

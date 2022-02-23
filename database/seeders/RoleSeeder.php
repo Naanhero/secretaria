@@ -24,7 +24,7 @@ class RoleSeeder extends Seeder
         $role2 ->syncPermissions([1, 2, 3, 5, 6, 9, 10, 11, 13, 14, 15, 17, 18, 19, 21, 22, 23, 25, 26, 27]);
         $role3 ->syncPermissions([2, 6, 9, 10, 11, 13, 14, 15, 17, 18, 19, 25, 26, 27]);
         $role4 ->syncPermissions([9, 10, 11, 13, 14, 15, 17, 18, 19]);
-        $role5 ->syncPermissions([10, 11, 13, 14, 15, 17, 18, 19]);
+        $role5 ->syncPermissions([6, 10, 14, 15, 18, 19]);
 
     }
 }

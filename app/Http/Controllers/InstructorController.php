@@ -9,10 +9,10 @@ class InstructorController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['instructors.read'])->only(['index']);
-        $this->middleware(['instructors.create'])->only(['create','store']);
-        $this->middleware(['instructors.update'])->only(['edit','update']);
-        $this->middleware(['instructors.delete'])->only(['destroy']);
+        $this->middleware(['can:instructors.read'])->only(['index']);
+        $this->middleware(['can:instructors.create'])->only(['create','store']);
+        $this->middleware(['can:instructors.update'])->only(['edit','update']);
+        $this->middleware(['can:instructors.delete'])->only(['destroy']);
     }
     /**
      * Display a listing of the resource.

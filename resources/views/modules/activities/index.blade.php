@@ -1,9 +1,9 @@
 @extends('adminlte::page')
-
+@can('activities.read')
 @section('content_header')
     <h1>Actividades</h1>
 @stop
- 
+@endcan
 @section('content')
 <div class="mb-4">
   @can('activities.create')

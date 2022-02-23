@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Secretaria',
+    'title' => 'DREC',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Secretaria </b>DREC',
+    'logo_img' => 'vendor/adminlte/dist/img/logo_risaralda.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'DREC',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -103,9 +103,9 @@ return [
     */
 
     'classes_auth_card' => 'card-outline card-primary',
-    'classes_auth_header' => '',
+    'classes_auth_header' => 'Por favor registrarse para iniciar sesión',
     'classes_auth_body' => '',
-    'classes_auth_footer' => '',
+    'classes_auth_footer' => 'd-none',
     'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-primary',
 
@@ -127,9 +127,9 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-warning elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-info navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -228,7 +228,7 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
+            'text'         => 'Búsqueda',
             'topnav_right' => true,
         ],
         [
@@ -241,32 +241,36 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ], */
-        ['header' => 'EDUCACIÓN'],
+        ['header' => 'SECRETARÍA'],
         [
             'text' => 'Areas',
             'url'  => '/areas',
             'icon' => 'fas fa-vihara',
-            'can' => 'areas.read'
+            'can' => 'areas.read',
         ],
         [
             'text' => 'Programas',
             'url'  => '/programs',
             'icon' => 'fas fa-graduation-cap',
+            'can' => 'programs.read',
         ],
         [
             'text' => 'Actividades',
             'url'  => '/activities',
             'icon' => 'fas fa-puzzle-piece',
+            'can' => 'activities.read',
         ],
         [
             'text' => 'Instructores',
             'url'  => '/instructors',
             'icon' => 'fas fa-chalkboard-teacher',
+            'can' => 'instructors.read',
         ],
         [
             'text' => 'Beneficiarios',
             'url'  => '/beneficiaries',
             'icon' => 'fas fa-address-book',
+            'can' => 'beneficiaries.read',
         ],
         /* [
             'text'    => 'multilevel',
@@ -306,7 +310,7 @@ return [
                 ],
             ],
         ], */
-        ['header' => 'ADMINISTRACION'],
+        ['header' => 'ADMINISTRACIÓN'],
         [
             'text'       => 'Usuarios del sistema',
             'url'        => '/users',
@@ -319,7 +323,7 @@ return [
         ],
         ['header' => 'INFORMES'],
         [
-            'text'       => 'Beneficiarios',
+            'text'       => 'Estadísticas',
             'url'        => '/stats/user-types',
             'icon' => 'fas fa-users',
             'submenu' => [

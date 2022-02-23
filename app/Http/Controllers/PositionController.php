@@ -10,10 +10,10 @@ class PositionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['positions.read'])->only(['index']);
-        $this->middleware(['positions.create'])->only(['create','store']);
-        $this->middleware(['positions.update'])->only(['edit','update']);
-        $this->middleware(['positions.delete'])->only(['destroy']); 
+        $this->middleware(['can:positions.read'])->only(['index']);
+        $this->middleware(['can:positions.create'])->only(['create','store']);
+        $this->middleware(['can:positions.update'])->only(['edit','update']);
+        $this->middleware(['can:positions.delete'])->only(['destroy']); 
     }
    
     /**

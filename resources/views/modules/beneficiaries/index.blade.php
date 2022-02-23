@@ -43,7 +43,7 @@
                     @can('beneficiaries.update')
                       <a class="btn btn-warning" href="{{ route('beneficiaries.edit',['beneficiary'=>$beneficiary]) }}">Editar</a>
                     @endcan
-                    @can
+                    @can('beneficiaries.delete')
                       <button class="btn btn-danger" type="submit">Eliminar</button>
                     @endcan
                   </form>
