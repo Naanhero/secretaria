@@ -2,9 +2,6 @@
 
 @section('content_header')
     <h1>Beneficiarios</h1>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Excel</button>
-  </div>
 @stop
 
 @section('content')
@@ -12,6 +9,9 @@
   @can('beneficiaries.create')
   <a class="btn btn-success" href="{{ route('beneficiaries.create') }}">Crear Beneficiario</a>  
   @endcan
+  <div class="col-12 mb-2">
+    <a class="btn btn-info" style="float:right" href="{{ route('/export/beneficiaries') }}">Excel</a>  
+</div>
 </div>
 <div class="col-12">
   @include('layout.flash-message')
