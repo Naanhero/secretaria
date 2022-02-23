@@ -58,8 +58,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('user-types', [UserStatController::class,'userTypes']);
         Route::get('beneficiary-for-ethnicgroups', [BeneficiaryStatController::class,'beneficiariesForEthnicGroups']);
         Route::get('beneficiary-for-cities', [BeneficiaryStatController::class,'beneficiariesForCities']);
-        Route::get('beneficiary-for-genders', [BeneficiaryStatController::class,'beneficiariesForGenders']);
-    });
+        Route::get('beneficiary-for-genders', [BeneficiaryStatController::class,'beneficiariesForGenders']); });
     Route::get('/export/users', [ExcelController::class, 'UserExport']);
     Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport']);
     Route::get('/export/activities', [ExcelController::class, 'ActivityExport']);

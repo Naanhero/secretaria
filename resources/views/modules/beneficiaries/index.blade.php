@@ -10,7 +10,7 @@
   <a class="btn btn-success" href="{{ route('beneficiaries.create') }}">Crear Beneficiario</a>  
   @endcan
   <div class="col-12 mb-2">
-    <a class="btn btn-info" style="float:right" href="{{ route('beneficiaries.create') }}">Excel</a>  
+    <a class="btn btn-info" style="float:right" href="{{ route('/export/beneficiaries') }}">Excel</a>  
 </div>
 </div>
 <div class="col-12">
