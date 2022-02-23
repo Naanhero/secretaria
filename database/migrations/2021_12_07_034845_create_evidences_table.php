@@ -19,6 +19,7 @@ class CreateEvidencesTable extends Migration
             $table->unsignedBigInteger('activity_id');
             $table->boolean('status');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('activity_id')->references('id')->on('activities');
 

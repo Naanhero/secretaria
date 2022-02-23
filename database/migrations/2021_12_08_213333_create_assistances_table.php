@@ -17,6 +17,7 @@ class CreateAssistancesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('activity_id');
             $table->foreign('activity_id')->references('id')->on('activities');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

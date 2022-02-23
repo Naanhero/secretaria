@@ -27,6 +27,7 @@ class CreateBeneficiariesTable extends Migration
             $table->string('email')->unique();
             $table->boolean('active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('gender_id')->references('id')->on('genders');
             $table->foreign('city_id')->references('id')->on('cities');

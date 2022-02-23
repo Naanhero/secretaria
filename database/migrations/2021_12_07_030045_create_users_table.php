@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('position_id');
             $table->unsignedBigInteger('gender_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('position_id')->references('id')->on('positions');
             $table->foreign('gender_id')->references('id')->on('genders');
 

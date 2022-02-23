@@ -20,6 +20,7 @@ class CreateActivitiesTable extends Migration
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('program_id')->references('id')->on('programs');
         });

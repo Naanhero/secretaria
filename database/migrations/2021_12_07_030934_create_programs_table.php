@@ -22,7 +22,7 @@ class CreateProgramsTable extends Migration
             $table->dateTime('end_date');
             $table->boolean('active')->default(true);
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('area_id')->references('id')->on('areas');
         });
     }
