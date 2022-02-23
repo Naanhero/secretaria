@@ -15,7 +15,14 @@
         @csrf
         <div class="form-row align-items-center">
             <div class="col-sm-3 my-1">
-                <label for="inlineFormInputName">Nombre</label>
+                <label for="inlineFormInputName">Primer Nombre</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                @error ('name')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>
+            <div class="col-sm-3 my-1">
+                <label for="inlineFormInputName">Segundo Nombre</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
                 @error ('name')
                     <small class="text-red">* {{ $message }}</small>
@@ -36,23 +43,45 @@
                 @enderror
             </div>
             <div class="col-sm-3 my-1">
-                <label for="inlineFormInputName">Celular</label>
+                <label for="inlineFormInputName">Edad</label>
+                <input type="number" class="form-control" id="age" name="age" value="{{ old('age') }}">
+                @error ('age')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>
+            <div class="form-group col-sm-3">
+                <label for="inputState">Tipo de identificación</label>
+                <select id="gender_id" name="gender_id"  class="form-control" value="{{ old('gender_id') }}">
+                    @foreach ($genders as $gender)
+                        <option value="{{ $gender->id }}">{{ $gender->name }}</option>   
+                    @endforeach
+                </select>
+                @error ('gender_id')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>
+            <div class="col-sm-3 my-1">
+                <label for="inlineFormInputName">N° de Identificación</label>
                 <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
                 @error ('phone')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
             <div class="col-sm-3 my-1">
-                <label for="inlineFormInputName">Direccion de Residencia</label>
-                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
-                @error ('address')
+                <label for="inlineFormInputName">Celular</label>
+                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
+                @error ('phone')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
-            <div class="col-sm-3 my-1">
-                <label for="inlineFormInputName">Edad</label>
-                <input type="number" class="form-control" id="age" name="age" value="{{ old('age') }}">
-                @error ('age')
+            <div class="form-group col-sm-3">
+                <label for="inputState">Condición</label>
+                <select id="gender_id" name="gender_id"  class="form-control" value="{{ old('gender_id') }}">
+                    @foreach ($genders as $gender)
+                        <option value="{{ $gender->id }}">{{ $gender->name }}</option>   
+                    @endforeach
+                </select>
+                @error ('gender_id')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
@@ -68,17 +97,6 @@
                 @enderror
             </div>
             <div class="form-group col-sm-3">
-                <label for="inputState">Ciudad</label>
-                <select id="city_id" name="city_id" class="form-control" value="{{ old('city_id') }}">
-                    @foreach ($cities as $city)
-                        <option value="{{ $city->id }}">{{ $city->name }}</option>   
-                    @endforeach
-                </select>
-                @error ('city_id')
-                    <small class="text-red">* {{ $message }}</small>
-                @enderror
-            </div>
-            <div class="form-group col-sm-3">
                 <label for="inputState">Grupo Etnico</label>
                 <select id="ethnic_group_id" name="ethnic_group_id" class="form-control" value="{{ old('ethnic_group_id') }}">
                     @foreach ($ethnicGroups as $ethnicGroup)
@@ -89,6 +107,45 @@
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
+            <div class="form-group col-sm-3">
+                <label for="inputState">Ciudad</label>
+                <select id="city_id" name="city_id" class="form-control" value="{{ old('city_id') }}">
+                    @foreach ($cities as $city)
+                        <option value="{{ $city->id }}">{{ $city->name }}</option>   
+                    @endforeach
+                </select>
+                @error ('city_id')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>
+            <div class="col-sm-3 my-1">
+                <label for="inlineFormInputName">Direccion de Residencia</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                @error ('address')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>
+            <div class="col-sm-3 my-1">
+                <label for="inlineFormInputName">Barrio o Vereda</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                @error ('address')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div> 
+            <div class="col-sm-3 my-1">
+                <label for="inlineFormInputName">Zona</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                @error ('address')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>  
+            <div class="col-sm-3 my-1">
+                <label for="inlineFormInputName">Estrato Socioeconómico</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+                @error ('address')
+                    <small class="text-red">* {{ $message }}</small>
+                @enderror
+            </div>   
             <div class="col-sm-3 my-1">
                 <label for="inlineFormInputName">Correo Electronico</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
@@ -97,7 +154,7 @@
                 @enderror
             </div>
             <div class="form-group col-sm-3">
-                <label for="inputState">Estado</label>
+                <label for="inputState">Estado del beneficiario</label>
                 <select id="active" name="active" class="form-control" value="{{ old('active') }}">
                   <option selected value="1">Activo</option>
                   <option value="0">Inactivo</option>
