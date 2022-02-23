@@ -13,10 +13,10 @@ class ProgramController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['programs.read'])->only(['index']);
-        $this->middleware(['programs.create'])->only(['create','store']);
-        $this->middleware(['programs.update'])->only(['edit','update']);
-        $this->middleware(['programs.delete'])->only(['destroy']); 
+        $this->middleware(['can:programs.read'])->only(['index']);
+        $this->middleware(['can:programs.create'])->only(['create','store']);
+        $this->middleware(['can:programs.update'])->only(['edit','update']);
+        $this->middleware(['can:programs.delete'])->only(['destroy']); 
     }
     
     public function index ()

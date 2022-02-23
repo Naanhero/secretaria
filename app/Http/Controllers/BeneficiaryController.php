@@ -13,16 +13,12 @@ class BeneficiaryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['beneficiaries.read'])->only(['index']);
-        $this->middleware(['beneficiaries.create'])->only(['create','store']);
-        $this->middleware(['beneficiaries.update'])->only(['edit','update']);
-        $this->middleware(['beneficiaries.delete'])->only(['destroy']);
+        $this->middleware(['can:beneficiaries.read'])->only(['index']);
+        $this->middleware(['can:beneficiaries.create'])->only(['create','store']);
+        $this->middleware(['can:beneficiaries.update'])->only(['edit','update']);
+        $this->middleware(['can:beneficiaries.delete'])->only(['destroy']);
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $beneficiaries = Beneficiary::all();
@@ -30,11 +26,6 @@ class BeneficiaryController extends Controller
         return view('modules.beneficiaries.index',compact('beneficiaries'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $cities = City::all();
@@ -44,12 +35,6 @@ class BeneficiaryController extends Controller
         return view('modules.beneficiaries.create',compact('cities','genders','ethnicGroups'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(CreateBeneficiaryRequest $request)
     {
         Beneficiary::create($request->all());
@@ -57,23 +42,6 @@ class BeneficiaryController extends Controller
         return redirect()->route('beneficiaries.index')->with('success','Beneficiario Creado correctamente');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Beneficiary $beneficiary)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Beneficiary $beneficiary)
     {
         $cities = City::all();
@@ -83,13 +51,6 @@ class BeneficiaryController extends Controller
         return view('modules.beneficiaries.edit',compact('beneficiary','cities','genders','ethnicGroups'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(CreateBeneficiaryRequest $request, Beneficiary $beneficiary)
     {
         $beneficiary->update($request->all());
@@ -97,12 +58,6 @@ class BeneficiaryController extends Controller
         return redirect()->route('beneficiaries.index')->with('success','Beneficiario actualizado correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Beneficiary $beneficiary)
     {
         $beneficiary->delete();
