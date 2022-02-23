@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ActivitiesExport;
 use App\Exports\BeneficiariesExport;
 use App\Exports\UsersExport;
 use Illuminate\Http\Request;
@@ -16,6 +17,11 @@ class ExcelController extends Controller
 
     public function BeneficiaryExport()
     {       
-        return Excel::download(new BeneficiariesExport, 'beneficiary.xlsx');
+        return Excel::download(new BeneficiariesExport, 'beneficiaries.xlsx');
+    }
+
+    public function activityExport()
+    {       
+        return Excel::download(new ActivitiesExport, 'activities.xlsx');
     }
 }
