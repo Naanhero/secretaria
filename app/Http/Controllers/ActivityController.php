@@ -11,10 +11,10 @@ class ActivityController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['activities.read'])->only(['index']);
-        $this->middleware(['activities.create'])->only(['create','store']);
-        $this->middleware(['activities.update'])->only(['edit','update']);
-        $this->middleware(['activities.delete'])->only(['destroy']);
+        $this->middleware(['can:activities.read'])->only(['index']);
+        $this->middleware(['can:activities.create'])->only(['create','store']);
+        $this->middleware(['can:activities.update'])->only(['edit','update']);
+        $this->middleware(['can:activities.delete'])->only(['destroy']);
     }
     public function index()
     {

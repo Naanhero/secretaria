@@ -10,10 +10,10 @@ class AreaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['areas.read'])->only(['index']);
-        $this->middleware(['areas.create'])->only(['create','store']);
-        $this->middleware(['areas.update'])->only(['edit','update']);
-        $this->middleware(['areas.delete'])->only(['destroy']);
+        $this->middleware(['can:areas.read'])->only(['index']);
+        $this->middleware(['can:areas.create'])->only(['create','store']);
+        $this->middleware(['can:areas.update'])->only(['edit','update']);
+        $this->middleware(['can:areas.delete'])->only(['destroy']);
     }
     public function index()
     {
