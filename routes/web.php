@@ -60,7 +60,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('beneficiary-for-cities', [BeneficiaryStatController::class,'beneficiariesForCities']);
         Route::get('beneficiary-for-genders', [BeneficiaryStatController::class,'beneficiariesForGenders']);
     });
-    Route::get('/export/users', [ExcelController::class, 'UserExport']);
-    Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport']);
+    Route::get('/export/users', [ExcelController::class, 'UserExport'])->name('export.users');
+    Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport'])->name('export.beneficiaries');
 });
 
