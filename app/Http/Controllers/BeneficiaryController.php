@@ -11,6 +11,13 @@ use Illuminate\Http\Request;
 
 class BeneficiaryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['beneficiaries.read'])->only(['index']);
+        $this->middleware(['beneficiaries.create'])->only(['create','store']);
+        $this->middleware(['beneficiaries.update'])->only(['edit','update']);
+        $this->middleware(['beneficiaries.delete'])->only(['destroy']);
+    }
     /**
      * Display a listing of the resource.
      *

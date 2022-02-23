@@ -9,7 +9,9 @@
     @include('layout.flash-message')
 </div>
 <div class="col-12">
-    <form action="{{ route('beneficiaries.store') }}" method="post">
+    @can('beneficiaries.create')
+        <form action="{{ route('beneficiaries.store') }}" method="post">  
+    @endcan
         @csrf
         <div class="form-row align-items-center">
             <div class="col-sm-3 my-1">

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class InstructorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['instructors.read'])->only(['index']);
+        $this->middleware(['instructors.create'])->only(['create','store']);
+        $this->middleware(['instructors.update'])->only(['edit','update']);
+        $this->middleware(['instructors.delete'])->only(['destroy']);
+    }
     /**
      * Display a listing of the resource.
      *

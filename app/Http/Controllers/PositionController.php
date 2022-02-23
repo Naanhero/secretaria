@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class PositionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['positions.read'])->only(['index']);
+        $this->middleware(['positions.create'])->only(['create','store']);
+        $this->middleware(['positions.update'])->only(['edit','update']);
+        $this->middleware(['positions.delete'])->only(['destroy']); 
+    }
+   
     /**
      * Display a listing of the resource.
      *

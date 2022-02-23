@@ -6,7 +6,9 @@
 
 @section('content')
 <div class="col-12">
-    <form action="{{ route('positions.store') }}" method="post">
+    @can('positions.create')
+        <form action="{{ route('positions.store') }}" method="post">  
+    @endcan
         @csrf
         <div class="form-row align-items-center">
             <div class="col-sm-3 my-1">

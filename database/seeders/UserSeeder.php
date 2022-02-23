@@ -28,6 +28,7 @@ class UserSeeder extends Seeder
         $user->gender_id = 1;
 
         $user->save();
+        $user->assignRole(1);
 
         $instructor = new User();
         $instructor->name = "Camilo";
@@ -42,5 +43,7 @@ class UserSeeder extends Seeder
         $instructor->gender_id = 1;
 
         $instructor->save();
+        $instructor->assignRole(2);
+
     }
 }

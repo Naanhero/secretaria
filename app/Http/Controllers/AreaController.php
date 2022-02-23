@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class AreaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['areas.read'])->only(['index']);
+        $this->middleware(['areas.create'])->only(['create','store']);
+        $this->middleware(['areas.update'])->only(['edit','update']);
+        $this->middleware(['areas.delete'])->only(['destroy']);
+    }
     public function index()
     {
         $areas = Area::all();

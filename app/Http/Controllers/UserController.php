@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['users.read'])->only(['index']);
+        $this->middleware(['users.create'])->only(['create','store']);
+        $this->middleware(['users.update'])->only(['edit','update']);
+        $this->middleware(['users.delete'])->only(['destroy']);
+
+    }
+
     public function index ()
     {
         $users = User::all();

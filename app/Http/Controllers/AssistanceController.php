@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class AssistanceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['assistance.read'])->only(['index']);
+        $this->middleware(['assistance.create'])->only(['create','store']);
+        $this->middleware(['assistance.update'])->only(['edit','update']);
+        $this->middleware(['assistance.delete'])->only(['destroy']);
+    }
     public function edit(Assistance $assistance)
     {
         $beneficiaries = Beneficiary::all();

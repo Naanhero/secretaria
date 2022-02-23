@@ -12,6 +12,7 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\Stats\BeneficiaryStatController;
 use App\Http\Controllers\Stats\UserStatController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,7 @@ Route::middleware(['auth'])->group(function () {
         return redirect('/home');
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    
+    // Route::resource('users', UserController::class)->name('')
     Route::resource('users',UserController :: class);
     Route::resource('areas',AreaController :: class);
     Route::resource('positions',PositionController::class);

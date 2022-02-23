@@ -6,7 +6,10 @@
 
 @section('content')
 <div class="col-12 mb-2">
-  <a class="btn btn-success" href="{{ route('positions.create') }}">Crear Cargo</a>
+  @can('positions.create')
+  <a class="btn btn-success" href="{{ route('positions.create') }}">Crear Cargo</a>  
+  @endcan
+  
 </div>
 <table class="table table-hover">
     <thead>
@@ -22,11 +25,14 @@
           <td>
               <div>
                 {{-- <a class="btn btn-danger" href="{{ route('positions.destroy',['position'=>$position->id]) }}">Eliminar</a> --}}
-                <form method="POST" action="{{ route('positions.destroy',$position->id) }}">
+                @can('positions.delete')
+                  <form method="POST" action="{{ route('positions.destroy',$position->id) }}">  
+                @endcan
                   @csrf
                   @method('DELETE')
-
-                    <a class="btn btn-warning" href="{{ route('positions.edit',['position'=>$position]) }}">Editar</a>
+                  @can('positions.update')
+                  <a class="btn btn-warning" href="{{ route('positions.edit',['position'=>$position]) }}">Editar</a> 
+                  @endcan
                     <button class="btn btn-danger" type="submit">Eliminar</button>
                   </form>
               </div>

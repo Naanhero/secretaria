@@ -6,7 +6,9 @@
 
 @section('content')
 <div class="col-12">
-    <form action="{{ route('beneficiaries.update',$beneficiary->id) }}" method="POST">
+    @can('beneficiaries.update')
+        <form action="{{ route('beneficiaries.update',$beneficiary->id) }}" method="POST">    
+    @endcan
         @csrf
         @method('PUT')
         

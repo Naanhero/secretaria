@@ -6,7 +6,10 @@
  
 @section('content')
 <div class="mb-4">
-  <a href="{{route('users.create')}}" class="btn btn-success">Crear Usuario</a>
+  @can('users.create')
+    <a href="{{route('users.create')}}" class="btn btn-success">Crear Usuario</a>
+  @endcan
+ 
 </div>
 <div class="col-12">
   @include('layout.flash-message')
@@ -37,9 +40,12 @@
               <form method="POST" action="{{ route('users.destroy',$user->id) }}">
                 @csrf
                 @method('DELETE')
-
-                  <a class="btn btn-warning" href="{{ route('users.edit',['user'=>$user]) }}">Editar</a>
+                  @can('users.update')
+                    <a class="btn btn-warning" href="{{ route('users.edit',['user'=>$user]) }}">Editar</a>
+                  @endcan
+                 @can('users.delete')
                   <button class="btn btn-danger" type="submit">Eliminar</button>
+                 @endcan
                 </form>
             </div>
           </td>

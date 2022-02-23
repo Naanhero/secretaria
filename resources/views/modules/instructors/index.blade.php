@@ -29,7 +29,9 @@
           @endif
           <td>
             <div>
+                @can('instructors.update')
                 <a class="btn btn-success" href="{{ route('instructors.edit',['instructor'=>$instructor]) }}">Administrar Grupos</a>
+                @endcan               
             </div>
           </td>
         </tr>

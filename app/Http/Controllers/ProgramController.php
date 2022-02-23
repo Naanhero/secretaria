@@ -11,6 +11,14 @@ use Illuminate\Http\Request;
 
 class ProgramController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['programs.read'])->only(['index']);
+        $this->middleware(['programs.create'])->only(['create','store']);
+        $this->middleware(['programs.update'])->only(['edit','update']);
+        $this->middleware(['programs.delete'])->only(['destroy']); 
+    }
+    
     public function index ()
     {
         $programs = Program::all();

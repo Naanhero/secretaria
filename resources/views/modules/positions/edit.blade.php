@@ -6,7 +6,10 @@
 
 @section('content')
 <div class="col-12">
-    <form action="{{ route('positions.update',$position->id) }}" method="POST">
+    @can('positions.update')
+        <form action="{{ route('positions.update',$position->id) }}" method="POST">    
+    @endcan
+    
         @csrf
         @method('PUT')
         

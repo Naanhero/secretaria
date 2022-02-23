@@ -9,7 +9,9 @@
     @include('layout.flash-message')
 </div>
 <div class="col-12">
-    <form action="{{ route('activities.update', $activity->id) }}" method="post"> {{--store guarda en la db--}}
+    @can('activities.update')
+        <form action="{{ route('activities.update', $activity->id) }}" method="post"> {{--store guarda en la db--}}
+    @endcan
         @csrf 
         @method('put')
         <div class="form-row align-items-center">

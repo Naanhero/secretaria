@@ -6,7 +6,9 @@
  
 @section('content')
 <div class="mb-4">
+  @can('areas.create')
   <a href="{{route('areas.create')}}" class="btn btn-success">Crear Area</a>
+  @endcan
 </div>
 <div class="col-12">
   @include('layout.flash-message')
@@ -35,9 +37,12 @@
               <form method="POST" action="{{ route('areas.destroy',$area->id) }}">
                 @csrf
                 @method('DELETE')
-
-                  <a class="btn btn-warning" href="{{ route('areas.edit',['area'=>$area]) }}">Editar</a>
-                  <button class="btn btn-danger" type="submit">Eliminar</button>
+                  @can('areas.update')
+                    <a class="btn btn-warning" href="{{ route('areas.edit',['area'=>$area]) }}">Editar</a>
+                  @endcan
+                  @can('areas.delete')
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                  @endcan
                 </form>
             </div>
           </td>

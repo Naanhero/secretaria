@@ -246,6 +246,7 @@ return [
             'text' => 'Areas',
             'url'  => '/areas',
             'icon' => 'fas fa-vihara',
+            'can' => 'areas.read'
         ],
         [
             'text' => 'Programas',

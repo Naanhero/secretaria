@@ -12,7 +12,10 @@
         <thead>
             <tr>
                 <th colspan="2">
-                    <form action="{{ route('assistance.store') }}" method="POST" id="addInstructorForm" name="addInstructorForm">
+                    @can('assistance.create')
+                        <form action="{{ route('assistance.store') }}" method="POST" id="addInstructorForm" name="addInstructorForm">    
+                    @endcan
+                    
                         @csrf
 
                         <div class="row">
@@ -45,7 +48,9 @@
                 <tr>
                     <td>{{ $beneficiary->name }} {{ $beneficiary->last_name }}</td>
                     <td>
-                        <a class="btn btn-danger" href="{{ route('assistance.removeBeneficiary',['assistance_id'=>$assistance->id,'beneficiary'=>$beneficiary->id]) }}">Quitar</a>
+                        @can('assistance.delete')
+                            <a class="btn btn-danger" href="{{ route('assistance.removeBeneficiary',['assistance_id'=>$assistance->id,'beneficiary'=>$beneficiary->id]) }}">Quitar</a>    
+                        @endcan
                     </td>
                 </tr>
             @endforeach

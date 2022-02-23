@@ -6,7 +6,9 @@
 
 @section('content')
 <div class="col-12 mb-2">
-  <a class="btn btn-success" href="{{ route('programs.create') }}">Crear Programa</a>
+  @can('programs.create')
+    <a class="btn btn-success" href="{{ route('programs.create') }}">Crear Programa</a>  
+  @endcan
 </div>
 <div class="col-12">
   @include('layout.flash-message')
@@ -39,9 +41,12 @@
                 <form method="POST" action="{{ route('programs.destroy',$program->id) }}">
                   @csrf
                   @method('DELETE')
-
+                  @can('programs.update')
                     <a class="btn btn-warning" href="{{ route('programs.edit',['program'=>$program]) }}"><i class="fas fa-edit"></i></a>
+                  @endcan
+                  @can('programs.delete')
                     <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                  @endcan  
                     <a class="btn btn-info" href="{{ route('instructorProgram.instructorProgram',['program'=>$program->id]) }}"><i class="fas fa-swimmer"></i></a>
                     <a href="{{ route('cityProgram.edit',['program'=>$program->id]) }}" class="btn btn-success"><i class="fas fa-map-marked-alt"></i></a>
                   </form>
