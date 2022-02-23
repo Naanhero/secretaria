@@ -9,6 +9,9 @@
   @can('activities.create')
   <a href="{{route('activities.create')}}" class="btn btn-success">Crear Actividad</a>
   @endcan
+<div class="col-12 mb-2">
+  <a class="btn btn-info" style="float:right" href="{{ route('/export/beneficiaries') }}">Excel</a>  
+</div>
 </div>
 <div class="col-12">
   @include('layout.flash-message')
