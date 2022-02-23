@@ -5,6 +5,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\AssistanceController;
 use App\Http\Controllers\BeneficiaryController;
 use App\Http\Controllers\CityProgramController;
+use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\PositionController;
@@ -59,6 +60,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('beneficiary-for-cities', [BeneficiaryStatController::class,'beneficiariesForCities']);
         Route::get('beneficiary-for-genders', [BeneficiaryStatController::class,'beneficiariesForGenders']);
     });
-    
+    Route::get('/export/users', [ExcelController::class, 'UserExport']);
+    Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport']);
 });
 
