@@ -28,8 +28,7 @@ class ProgramController extends Controller
     public function create ()
     {
         $areas = Area::all();
-        $cities = City::all();
-        return view('modules.programs.create',compact('areas','cities'));
+        return view('modules.programs.create',compact('areas'));
     }
 
     public function store(CreateProgramRequest $request)
