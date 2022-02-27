@@ -10,7 +10,11 @@
   <a href="{{route('activities.create')}}" class="btn btn-success">Crear Actividad</a>
   @endcan
 <div class="col-12 mb-2">
+<<<<<<< HEAD
   <a class="btn btn-info" style="float:right" href="{{ route('/export/activities') }}">Excel</a>  
+=======
+  <a class="btn btn-success mb-1" style="float:right" href="{{ route('export.activities') }}"><i class="fas fa-file-excel"> Descargar</i></a>  
+>>>>>>> f76b0954b22565991577a6f3973b744ed76cd678
 </div>
 </div>
 <div class="col-12">
