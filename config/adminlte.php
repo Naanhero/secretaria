@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Secretaria </b>DREC',
+    'logo' => '<br>Sistema DREC',
     'logo_img' => 'vendor/adminlte/dist/img/logo_risaralda.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -53,6 +53,7 @@ return [
     'logo_img_alt' => 'DREC',
 
     /*
+    
     |--------------------------------------------------------------------------
     | User Menu
     |--------------------------------------------------------------------------
@@ -87,7 +88,7 @@ return [
     'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => null,
+    'layout_fixed_footer' => true,
     'layout_dark_mode' => null,
 
     /*
@@ -122,7 +123,7 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-white',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',

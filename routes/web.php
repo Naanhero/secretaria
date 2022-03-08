@@ -16,6 +16,7 @@ use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,17 +59,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('user-types', [UserStatController::class,'userTypes']);
         Route::get('beneficiary-for-ethnicgroups', [BeneficiaryStatController::class,'beneficiariesForEthnicGroups']);
         Route::get('beneficiary-for-cities', [BeneficiaryStatController::class,'beneficiariesForCities']);
-<<<<<<< HEAD
-        Route::get('beneficiary-for-genders', [BeneficiaryStatController::class,'beneficiariesForGenders']); });
-    Route::get('/export/users', [ExcelController::class, 'UserExport']);
-    Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport']);
-    Route::get('/export/activities', [ExcelController::class, 'ActivityExport']);
-=======
         Route::get('beneficiary-for-genders', [BeneficiaryStatController::class,'beneficiariesForGenders']);
     });
     Route::get('/export/users', [ExcelController::class, 'UserExport'])->name('export.users');
     Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport'])->name('export.beneficiaries');
     Route::get('/export/activities', [ExcelController::class, 'activityExport'])->name('export.activities');
->>>>>>> f76b0954b22565991577a6f3973b744ed76cd678
 });
-

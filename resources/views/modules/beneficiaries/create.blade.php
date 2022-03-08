@@ -16,15 +16,15 @@
         <div class="form-row align-items-center">
             <div class="col-sm-3 my-1">
                 <label for="inlineFormInputName">Primer Nombre</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
-                @error ('name')
+                <input type="text" class="form-control" id="first_" name="first_name" value="{{ old('first_name') }}">
+                @error ('first_name')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
             <div class="col-sm-3 my-1">
                 <label for="inlineFormInputName">Segundo Nombre</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
-                @error ('name')
+                <input type="text" class="form-control" id="second_name" name="second_name" value="{{ old('second_name') }}">
+                @error ('second_name')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
@@ -51,19 +51,19 @@
             </div>
             <div class="form-group col-sm-3">
                 <label for="inputState">Tipo de identificación</label>
-                <select id="gender_id" name="gender_id"  class="form-control" value="{{ old('gender_id') }}">
-                    @foreach ($genders as $gender)
-                        <option value="{{ $gender->id }}">{{ $gender->name }}</option>   
+                <select id="type_id" name="type_id"  class="form-control" value="{{ old('type_id') }}">
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>   
                     @endforeach
                 </select>
-                @error ('gender_id')
+                @error ('type_id')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
             <div class="col-sm-3 my-1">
                 <label for="inlineFormInputName">N° de Identificación</label>
-                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
-                @error ('phone')
+                <input type="text" class="form-control" id="identification" name="identification" value="{{ old('identification') }}">
+                @error ('identification')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
@@ -76,12 +76,12 @@
             </div>
             <div class="form-group col-sm-3">
                 <label for="inputState">Condición</label>
-                <select id="gender_id" name="gender_id"  class="form-control" value="{{ old('gender_id') }}">
-                    @foreach ($genders as $gender)
-                        <option value="{{ $gender->id }}">{{ $gender->name }}</option>   
+                <select id="condition_id" name="condition_id"  class="form-control" value="{{ old('condition_id') }}">
+                    @foreach ($conditions as $condition)
+                        <option value="{{ $condition->id }}">{{ $condition->name }}</option>   
                     @endforeach
                 </select>
-                @error ('gender_id')
+                @error ('condition_id')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
@@ -127,25 +127,33 @@
             </div>
             <div class="col-sm-3 my-1">
                 <label for="inlineFormInputName">Barrio o Vereda</label>
-                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
-                @error ('address')
+                <input type="text" class="form-control" id="neighborhood" name="neighborhood" value="{{ old('neighborhood') }}">
+                @error ('neighborhood')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div> 
-            <div class="col-sm-3 my-1">
-                <label for="inlineFormInputName">Zona</label>
-                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
-                @error ('address')
+            <div class="form-group col-sm-3">
+                <label for="inputState">Zona</label>
+                <select id="zone_id" name="zone_id"  class="form-control" value="{{ old('zone_id') }}">
+                    @foreach ($zones as $zone)
+                        <option value="{{ $zone->id }}">{{ $zone->name }}</option>   
+                    @endforeach
+                </select>
+                @error ('zone_id')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
-            </div>  
-            <div class="col-sm-3 my-1">
-                <label for="inlineFormInputName">Estrato Socioeconómico</label>
-                <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
-                @error ('address')
+            </div>
+            <div class="form-group col-sm-3">
+                <label for="inputState">Estrato Socioeconómico</label>
+                <select id="stratum_id" name="stratum_id"  class="form-control" value="{{ old('stratum_id') }}">
+                    @foreach ($stratums as $stratum)
+                        <option value="{{ $stratum->id }}">{{ $stratum->name }}</option>   
+                    @endforeach
+                </select>
+                @error ('stratum_id')
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
-            </div>   
+            </div>
             <div class="col-sm-3 my-1">
                 <label for="inlineFormInputName">Correo Electronico</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">

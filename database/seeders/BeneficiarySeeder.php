@@ -14,6 +14,24 @@ class BeneficiarySeeder extends Seeder
      */
     public function run()
     {
-        Beneficiary::create(['name' => 'Alba','last_name'=>'garcia','second_last_name'=>'cortes','phone'=>'1234567890','address'=>'Parque Olaya Calle 22','age'=>42,'gender_id'=>2,'city_id'=>1,'ethnic_group_id'=>3,'email'=>'alba@gmail.com','active'=>1]);
+        Beneficiary::create([
+            'first_name' => 'Alba',
+            'second_name' => 'Lucia',
+            'last_name'=>'garcia',
+            'second_last_name'=>'cortes',
+            'age'=>42,
+            'type_id'=> 2,
+            'identification'=> '111112234',
+            'phone'=>'1234567890',
+            'condition_id'=> 1,
+            'gender_id'=>2,
+            'ethnic_group_id'=>3,
+            'city_id'=>1,
+            'address'=>'Parque Olaya Calle 22',
+            'neighborhood'=> 'Centro',
+            'zone_id'=> 2,
+            'stratum_id'=> 3,
+            'email'=>'alba@gmail.com',
+            'active'=>1]);
     }
 }

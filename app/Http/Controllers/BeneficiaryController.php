@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Beneficiary\CreateBeneficiaryRequest;
 use App\Models\Beneficiary;
 use App\Models\City;
+use App\Models\Condition;
 use App\Models\EthnicGroup;
 use App\Models\Gender;
+use App\Models\Stratum;
+use App\Models\Zone;
+use App\Models\Type;
 use Illuminate\Http\Request;
+
+use function PHPSTORM_META\type;
 
 class BeneficiaryController extends Controller
 {
@@ -31,8 +37,12 @@ class BeneficiaryController extends Controller
         $cities = City::all();
         $genders = Gender::all();
         $ethnicGroups = EthnicGroup::all();
+        $zones = Zone::all();
+        $stratums = Stratum::all();
+        $conditions = Condition::all();
+        $types = Type::all();
 
-        return view('modules.beneficiaries.create',compact('cities','genders','ethnicGroups'));
+        return view('modules.beneficiaries.create',compact('cities','genders','ethnicGroups','zones','stratums','conditions','types'));
     }
 
     public function store(CreateBeneficiaryRequest $request)
@@ -47,8 +57,12 @@ class BeneficiaryController extends Controller
         $cities = City::all();
         $genders = Gender::all();
         $ethnicGroups = EthnicGroup::all();
+        $zones = Zone::all();
+        $stratums = Stratum::all();
+        $conditions = Condition::all();
+        $types = Type::all();
 
-        return view('modules.beneficiaries.edit',compact('beneficiary','cities','genders','ethnicGroups'));
+        return view('modules.beneficiaries.edit',compact('beneficiary','cities','genders','ethnicGroups','zones','stratums','conditions','types'));
     }
 
     public function update(CreateBeneficiaryRequest $request, Beneficiary $beneficiary)

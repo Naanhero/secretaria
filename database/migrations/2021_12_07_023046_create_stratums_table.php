@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateZoneTable extends Migration
+class CreateStratumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateZoneTable extends Migration
      */
     public function up()
     {
-        Schema::create('zone', function (Blueprint $table) {
+        Schema::create('stratums', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateZoneTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zone');
+        Schema::dropIfExists('stratums');
     }
 }

@@ -31,4 +31,20 @@ class Beneficiary extends Model
     {
         return $this->belongsTo(Gender::class);
     }
+    public function condition()
+    {
+        return $this->belongsTo(Condition::class);
+    }
+    public function stratum()
+    {
+        return $this->belongsTo(Stratum::class);
+    }
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+    public function zone()
+    {
+        return $this->belongsTo(Zone::class);
+    }
 }

@@ -21,11 +21,15 @@ class DatabaseSeeder extends Seeder
          $this->call(EthnicGroupSeeder::class);
          $this->call(AreaSeeder::class);
          $this->call(ProgramSeeder::class);
-         $this->call(ActivitySeeder::class);
+         $this->call(ConditionSeeder::class);
+         $this->call(StratumSeeder::class);
+         $this->call(TypeSeeder::class);
+         $this->call(ZoneSeeder::class);
          $this->call(BeneficiarySeeder::class);
          $this->call(PermissionSeeder::class);
          $this->call(RoleSeeder::class);
          $this->call(UserSeeder::class);
+
 
     }
 }

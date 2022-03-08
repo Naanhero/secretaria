@@ -42,13 +42,17 @@
                   @csrf
                   @method('DELETE')
                   @can('programs.update')
-                    <a class="btn btn-warning" href="{{ route('programs.edit',['program'=>$program]) }}"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                    title="Editar registro" href="{{ route('programs.edit',['program'=>$program]) }}"><i class="fas fa-edit"></i></a>
                   @endcan
                   @can('programs.delete')
-                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                    <button class="btn btn-danger" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                    title="Borrar registro"><i class="fas fa-trash"></i></button>
                   @endcan  
-                    <a class="btn btn-info" href="{{ route('instructorProgram.instructorProgram',['program'=>$program->id]) }}"><i class="fas fa-swimmer"></i></a>
-                    <a href="{{ route('cityProgram.edit',['program'=>$program->id]) }}" class="btn btn-success"><i class="fas fa-map-marked-alt"></i></a>
+                    <a class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                    title="Asignar instructor" href="{{ route('instructorProgram.instructorProgram',['program'=>$program->id]) }}"><i class="fas fa-swimmer"></i></a>
+                    <a href="{{ route('cityProgram.edit',['program'=>$program->id]) }}" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                      title="Asignar Municipio"><i class="fas fa-map-marked-alt"></i></a>
                   </form>
               </div>
           </td>

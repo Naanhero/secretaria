@@ -24,15 +24,22 @@ class CreateBeneficiaryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:3',
+            'first_name' => 'required|string|min:3',
+            'second_name' => 'required|string|min:3',
             'last_name' => 'required|string|min:3',
             'second_last_name' => 'required|string|min:3',
-            'phone' => 'required|string|min:10|max:10',
-            'address' => 'required|string|min:5',
             'age' => 'required|integer|between:1,100',
+            'type_id' => 'required|exists:types,id',
+            'identification' => 'required|string|min:3',
+            'phone' => 'required|string|min:10|max:10',
+            'condition_id' => 'required|exists:conditions,id',
             'gender_id' => 'required|exists:genders,id',
-            'city_id' => 'required|exists:cities,id',
             'ethnic_group_id' => 'required|exists:ethnic_groups,id',
+            'city_id' => 'required|exists:cities,id',
+            'address' => 'required|string|min:3',
+            'neighborhood' => 'required|string|min:3',
+            'zone_id' => 'required|exists:zones,id',
+            'stratum_id' => 'required|exists:stratums,id',
             'email' => 'required|email',
             'active' => 'required|boolean'
         ];
