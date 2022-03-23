@@ -23,6 +23,8 @@ class User extends Authenticatable
         'name',
         'last_name',
         'second_last_name',
+        'type_id',
+        'identification',
         'phone',
         'address',
         'gender_id',
@@ -69,5 +71,9 @@ class User extends Authenticatable
     public function groups()
     {
         return $this->hasMany(Group::class);
+    }
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 }

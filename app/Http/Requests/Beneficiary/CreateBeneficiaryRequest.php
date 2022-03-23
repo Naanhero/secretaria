@@ -25,9 +25,9 @@ class CreateBeneficiaryRequest extends FormRequest
     {
         return [
             'first_name' => 'required|string|min:3',
-            'second_name' => 'required|string|min:3',
+            'second_name' => 'nullable|string|min:3',
             'last_name' => 'required|string|min:3',
-            'second_last_name' => 'required|string|min:3',
+            'second_last_name' => 'nullable|string|min:3',
             'age' => 'required|integer|between:1,100',
             'type_id' => 'required|exists:types,id',
             'identification' => 'required|string|min:3',

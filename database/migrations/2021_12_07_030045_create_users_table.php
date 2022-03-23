@@ -17,7 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
-            $table->string('second_last_name');
+            $table->string('second_last_name')->nullable();
+            $table->foreignId('type_id')->references('id')->on('types');
+            $table->string('identification');
             $table->string('phone');
             $table->string('address');
             $table->string('email')->unique();

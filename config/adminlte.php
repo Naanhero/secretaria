@@ -242,7 +242,10 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ], */
-        ['header' => 'SECRETARÍA'],
+        [
+            'header' => 'SECRETARÍA',
+            'can' => 'secretary.header'
+        ],
         [
             'text' => 'Areas',
             'url'  => '/areas',
@@ -311,37 +314,54 @@ return [
                 ],
             ],
         ], */
-        ['header' => 'ADMINISTRACIÓN'],
+        [
+            'header' => 'ADMINISTRACIÓN',
+            'can' => 'administration.header'                    
+        ],
         [
             'text'       => 'Usuarios del sistema',
             'url'        => '/users',
             'icon' => 'fas fa-users',
+            'can' => 'users.read'
         ],
-        [
+        /* [
             'text'       => 'Cargos',
             'url'        => '/positions',
             'icon' => 'fas fa-award',
+        ], */
+        [
+            'text'       => 'Backup',
+            'url'        => '/positions',
+            'icon' => 'fas fa-database',
+            'can' => 'backup.header'
         ],
-        ['header' => 'INFORMES'],
+        [
+            'header' => 'INFORMES',
+            'can' => 'informs.header'                    
+        ],
         [
             'text'       => 'Estadísticas',
             'url'        => '/stats/user-types',
             'icon' => 'fas fa-users',
+            'can' => 'stats.read',
             'submenu' => [
                 [
                     'text'       => 'Por Grupo Etnico',
                     'url'        => '/stats/beneficiary-for-ethnicgroups',
                     'icon' => 'fas fa-campground',
+                    'can' => 'users.beneficiaries.group_ethnic.read'                    
                 ],
                 [
                     'text'       => 'Por Ciudad',
                     'url'        => '/stats/beneficiary-for-cities',
                     'icon' => 'fas fa-city',
+                    'can' => 'users.beneficiaries.cities.read'                    
                 ],
                 [
                     'text'       => 'Por Género',
                     'url'        => '/stats/beneficiary-for-genders',
                     'icon' => 'fas fa-venus-mars',
+                    'can' => 'users.beneficiaries.gender.read'                    
                 ]
             ]
         ]

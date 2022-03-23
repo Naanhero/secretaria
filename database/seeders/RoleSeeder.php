@@ -21,10 +21,10 @@ class RoleSeeder extends Seeder
         $role3 = Role::create(['guard_name'=>'web','name' => 'Coordinator']);
         $role4 = Role::create(['guard_name'=>'web','name' => 'Instructor']);
         $role5 = Role::create(['guard_name'=>'web','name' => 'Aux']);
-        $role2 ->syncPermissions([1, 2, 3, 5, 6, 9, 10, 11, 13, 14, 15, 17, 18, 19, 21, 22, 23, 25, 26, 27]);
-        $role3 ->syncPermissions([2, 6, 9, 10, 11, 13, 14, 15, 17, 18, 19, 25, 26, 27]);
-        $role4 ->syncPermissions([9, 10, 11, 13, 14, 15, 17, 18, 19]);
-        $role5 ->syncPermissions([6, 10, 14, 15, 18, 19]);
+        $role2 ->syncPermissions([1, 2, 3, 5, 6, 9, 10, 11, 13, 14, 15, 17, 18, 19, 21, 22, 23, 25, 26, 27, 30, 31 , 32]);
+        $role3 ->syncPermissions([2, 6, 9, 10, 11, 13, 14, 15, 17, 18, 19, 25, 26, 27, 30, 32]);
+        $role4 ->syncPermissions([9, 10, 11, 13, 14, 15, 17, 18, 19, 30]);
+        $role5 ->syncPermissions([6, 10, 14, 15, 18, 19, 30]);
 
     }
 }

@@ -26,11 +26,13 @@ class CreateUserRequest extends FormRequest
         return [
             'name' => 'required|string|min:3',
             'last_name' => 'required|string|min:3',
-            'second_last_name' => 'required|string|min:3',
+            'second_last_name' => 'nullable|string|min:3',
+            'type_id' => 'required|exists:types,id',
+            'identification' => 'required|string|min:3',
             'phone' => 'required|string|min:10|max:10',
             'address' => 'required|string|min:5',
             'gender_id' => 'required|exists:genders,id',
-            'email' => 'required|email',
+            'email' => 'unique:users|email',
             'position_id' => 'required|exists:positions,id',
             'active' => 'required|boolean'
         ];

@@ -19,6 +19,8 @@ class UserSeeder extends Seeder
         $user->name = "super";
         $user->last_name = "administrador";
         $user->second_last_name = "sistema";
+        $user->type_id = 2;
+        $user->identification = "108678900";
         $user->phone = "1234567890";
         $user->address = "casa de nathalia";
         $user->email = "superadmin@gmail.com";
@@ -34,6 +36,8 @@ class UserSeeder extends Seeder
         $instructor->name = "Camilo";
         $instructor->last_name = "Roman";
         $instructor->second_last_name = "Perez";
+        $instructor->type_id = 2;
+        $instructor->identification = "108900000";
         $instructor->phone = "1234567890";
         $instructor->address = "casa de camilo";
         $instructor->email = "camilo@gmail.com";

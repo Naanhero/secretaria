@@ -15,7 +15,7 @@ class BeneficiariesExport implements FromCollection, WithHeadings
     {
         $beneficiaries = DB::table('beneficiaries')
                     ->select(
-                        'beneficiaries.name',
+                        'beneficiaries.first_name',
                         'beneficiaries.last_name',
                         'beneficiaries.second_last_name',
                         'beneficiaries.phone',

@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\User\CreateUserRequest;
 use App\Models\Gender;
 use App\Models\Position;
+use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
+use function PHPSTORM_META\type;
 
 class UserController extends Controller
 {
@@ -31,8 +34,9 @@ class UserController extends Controller
     {
         $genders = Gender::all();
         $positions = Position::all();
+        $types = Type::all();
 
-        return view('modules.users.create',compact('genders','positions'));
+        return view('modules.users.create',compact('genders','positions','types'));
     }
 
     public function store (CreateUserRequest $request)

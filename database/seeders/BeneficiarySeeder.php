@@ -31,7 +31,7 @@ class BeneficiarySeeder extends Seeder
             'neighborhood'=> 'Centro',
             'zone_id'=> 2,
             'stratum_id'=> 3,
-            'email'=>'alba@gmail.com',
+            'email'=>'alb@gmail.com',
             'active'=>1]);
     }
 }

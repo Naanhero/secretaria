@@ -14,6 +14,7 @@ class EthnicGroupSeeder extends Seeder
      */
     public function run()
     {
+        EthnicGroup::create(['name' => 'Ninguno']);
         EthnicGroup::create(['name' => 'Afrocolombiano']);
         EthnicGroup::create(['name' => 'Indigena']);
         EthnicGroup::create(['name' => 'Mestizo']);

@@ -41,6 +41,11 @@ class PermissionSeeder extends Seeder
         Permission::create(['id'=>25,'guard_name'=>'web','name'=>'stats.beneficiaries.group_ethnic.read']);
         Permission::create(['id'=>26,'guard_name'=>'web','name'=>'stats.beneficiaries.cities.read']);
         Permission::create(['id'=>27,'guard_name'=>'web','name'=>'stats.beneficiaries.gender.read']);
+        Permission::create(['id'=>28,'guard_name'=>'web','name'=>'stats.read']);
+        Permission::create(['id'=>29,'guard_name'=>'web','name'=>'backup.read']);
+        Permission::create(['id'=>30,'guard_name'=>'web','name'=>'secretary.header']);
+        Permission::create(['id'=>31,'guard_name'=>'web','name'=>'administration.header']);
+        Permission::create(['id'=>32,'guard_name'=>'web','name'=>'informs.header']);
         
     }
 }

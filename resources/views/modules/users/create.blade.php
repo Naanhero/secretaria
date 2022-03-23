@@ -45,6 +45,24 @@
                       <small class="text-red">* {{ $message }}</small>
                   @enderror
                 </div>
+                <div class="form-group col-sm-3">
+                    <label for="inputState">Tipo de identificación</label>
+                    <select id="type_id" name="type_id"  class="form-control" value="{{ old('type_id') }}">
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>   
+                        @endforeach
+                    </select>
+                    @error ('type_id')
+                        <small class="text-red">* {{ $message }}</small>
+                    @enderror
+                </div>
+                <div class="col-sm-3 my-1">
+                    <label for="inlineFormInputName">N° de Identificación</label>
+                    <input type="text" class="form-control" id="identification" name="identification" value="{{ old('identification') }}">
+                    @error ('identification')
+                        <small class="text-red">* {{ $message }}</small>
+                    @enderror
+                </div>
                 <div class="col-sm-3 my-1">
                     <label for="inlineFormInputName">Celular</label>
                     <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}">
