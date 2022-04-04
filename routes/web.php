@@ -17,6 +17,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Row;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('instructorProgram/{program}',[ProgramController::class,'instructorProgram'])->name('instructorProgram.instructorProgram');
     Route::post('addInstructorProgram',[ProgramController::class,'addInstructor'])->name('addInstructorProgram.addInstructor');
     Route::get('removeInstructorProgram/{program}/{user}',[ProgramController::class,'removeInstructor'])->name('removeInstructorProgram.removeInstructor');
+    Route::get('beneficiaryInstructor/{beneficiary}',[BeneficiaryController::class,'beneficiaryInstructor'])->name('beneficiaryInstructor.beneficiaryInstructor');                  
+    Route::post('addBeneficiaryInstructor',[BeneficiaryController::class,'addInstructor'])->name('addBeneficiaryInstructor.addInstructor');
+    Route::get('removeBeneficiaryInstructor/{beneficiary}/{user}',[BeneficiaryController::class,'removeInstructor'])->name('removeBeneficiaryInstructor.removeInstructor');
     Route::resource('activities',ActivityController::class);
     Route::resource('instructors',InstructorController::class);
     Route::resource('groups',GroupController::class);
@@ -64,4 +68,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/export/users', [ExcelController::class, 'UserExport'])->name('export.users');
     Route::get('/export/beneficiaries', [ExcelController::class, 'BeneficiaryExport'])->name('export.beneficiaries');
     Route::get('/export/activities', [ExcelController::class, 'activityExport'])->name('export.activities');
+    Route::get('export/instructors',[ExcelController::class, 'instructorExport'])->name('export.instructorsBeneficiaries');
 });

@@ -47,4 +47,12 @@ class Beneficiary extends Model
     {
         return $this->belongsTo(Zone::class);
     }
+    public function program()
+    {
+        return $this->belongsToMany(Program::class);
+    }
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

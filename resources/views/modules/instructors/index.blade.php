@@ -32,7 +32,9 @@
                 @can('instructors.update')
                 <a class="btn btn-success" href="{{ route('instructors.edit',['instructor'=>$instructor]) }}">Administrar Grupos</a>
                 @endcan               
-            </div>
+          
+              <a class="btn btn-info" href="{{ route('export.instructorsBeneficiaries',['instructor'=>$instructor]) }}"><i class="fas fa-file-excel"> Descargar beneficiarios</i></a>  
+          </div>
           </td>
         </tr>
         @endforeach

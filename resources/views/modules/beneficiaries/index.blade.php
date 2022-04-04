@@ -46,6 +46,8 @@
                     @can('beneficiaries.update')
                       <a class="btn btn-warning" href="{{ route('beneficiaries.edit',['beneficiary'=>$beneficiary]) }}">Editar</a>
                     @endcan
+                    <a class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                    title="Asignar instructor" href="{{ route('beneficiaryInstructor.beneficiaryInstructor',['beneficiary'=>$beneficiary->id]) }}"><i class="fas fa-swimmer"></i></a>
                     @can('beneficiaries.delete')
                       <button class="btn btn-danger" type="submit">Eliminar</button>
                     @endcan

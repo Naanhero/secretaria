@@ -34,9 +34,9 @@
                         <small class="text-red">* {{ $message }}</small>
                     @enderror
                 </div>
-                <div class="form-group col-sm-3">
+                <div class="col-sm-3 my-1">
                   <label for="inputState">Género</label>
-                  <select id="gender_id" name="gender_id"  class="form-control" value="{{ old('gender_id') }}">
+                  <select id="gender_id" name="gender_id"  class="form-control" value="{{ old('gender_id') }}"><option value="">--</option>
                       @foreach ($genders as $gender)
                           <option value="{{ $gender->id }}">{{ $gender->name }}</option>   
                       @endforeach
@@ -45,9 +45,9 @@
                       <small class="text-red">* {{ $message }}</small>
                   @enderror
                 </div>
-                <div class="form-group col-sm-3">
+                <div class="col-sm-3 my-1">
                     <label for="inputState">Tipo de identificación</label>
-                    <select id="type_id" name="type_id"  class="form-control" value="{{ old('type_id') }}">
+                    <select id="type_id" name="type_id"  class="form-control" value="{{ old('type_id') }}"><option value="">--</option>
                         @foreach ($types as $type)
                             <option value="{{ $type->id }}">{{ $type->name }}</option>   
                         @endforeach
@@ -92,9 +92,9 @@
                         <small class="text-red">* {{ $message }}</small>
                     @enderror
                 </div>
-                <div class="form-group col-sm-3">
+                <div class="col-sm-3 my-1">
                   <label for="inputState">Cargo</label>
-                  <select id="position_id" name="position_id"  class="form-control" value="{{ old('position_id') }}">
+                  <select id="position_id" name="position_id"  class="form-control" value="{{ old('position_id') }}"><option value="">--</option>
                       @foreach ($positions as $position)
                           <option value="{{ $position->id }}">{{ $position->name }}</option>   
                       @endforeach
@@ -103,7 +103,7 @@
                       <small class="text-red">* {{ $message }}</small>
                   @enderror
                 </div>
-                <div class="form-group col-sm-3">
+                <div class="col-sm-3 my-1">
                     <label for="inputState">Estado</label>
                     <select id="active" name="active" class="form-control" value="{{ old('active') }}">
                         <option selected value="1">Activo</option>

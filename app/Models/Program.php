@@ -33,4 +33,8 @@ class Program extends Model
     {
         return $this->belongsToMany(User::class);
     }
+    public function beneficiaries()
+    {
+        return $this->belongsToMany(Beneficiary::class);
+    }
 }

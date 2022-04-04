@@ -76,4 +76,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Type::class);
     }
+    public function beneficiary()
+    {
+        return $this->belongsToMany(Beneficiary::class);
+    }
 }

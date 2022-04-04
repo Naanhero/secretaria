@@ -8,9 +8,11 @@ use App\Models\City;
 use App\Models\Condition;
 use App\Models\EthnicGroup;
 use App\Models\Gender;
+use App\Models\Program;
 use App\Models\Stratum;
 use App\Models\Zone;
 use App\Models\Type;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use function PHPSTORM_META\type;
@@ -41,8 +43,10 @@ class BeneficiaryController extends Controller
         $stratums = Stratum::all();
         $conditions = Condition::all();
         $types = Type::all();
+        $programs = Program::all();
+       //$users = User::all();
 
-        return view('modules.beneficiaries.create',compact('cities','genders','ethnicGroups','zones','stratums','conditions','types'));
+        return view('modules.beneficiaries.create',compact('cities','genders','ethnicGroups','zones','stratums','conditions','types','programs'));
     }
 
     public function store(CreateBeneficiaryRequest $request)
@@ -61,8 +65,10 @@ class BeneficiaryController extends Controller
         $stratums = Stratum::all();
         $conditions = Condition::all();
         $types = Type::all();
+        $programs = Program::all();
+        //$users = User::all();
 
-        return view('modules.beneficiaries.edit',compact('beneficiary','cities','genders','ethnicGroups','zones','stratums','conditions','types'));
+        return view('modules.beneficiaries.edit',compact('beneficiary','cities','genders','ethnicGroups','zones','stratums','conditions','types','programs'));
     }
 
     public function update(CreateBeneficiaryRequest $request, Beneficiary $beneficiary)
@@ -78,4 +84,28 @@ class BeneficiaryController extends Controller
 
         return redirect()->route('beneficiaries.index')->with('success','Beneficiario eliminado correctamente');
     }
+
+    public function beneficiaryInstructor(beneficiary $beneficiary)
+    {
+        $users = User::where('position_id',3)->where('active',1)->get();
+        return view('modules.beneficiaries.instructor-beneficiary',compact('beneficiary','users'));
+    }
+
+    public function  addInstructor(Request $request)
+    {
+        $beneficiary = Beneficiary::find($request->beneficiary_id);
+
+        foreach ($beneficiary->users as $user) {
+            if ($user->id == $request->user_id) return back();
+        }
+        $beneficiary->users()->attach($request->user_id);
+        return back();
+    }
+
+    public function removeInstructor(Beneficiary $beneficiary, User $user)
+    {
+        $beneficiary->users()->detach($user->id);
+        return back();
+    }
+
 }

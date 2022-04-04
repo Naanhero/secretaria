@@ -21,7 +21,7 @@
                     <small class="text-red">* {{ $message }}</small>
                 @enderror
             </div>
-            <div class="form-group col-sm-4">
+            <div class="col-sm-4 my-1">
                 <label for="inputState">Area</label>
                 <select id="area_id" name="area_id"  class="form-control" value="{{ old('area_id') }}">
                     @foreach ($areas as $area)

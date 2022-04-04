@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Program;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +20,7 @@ class CreateBeneficiariesTable extends Migration
             $table->string('second_name')->nullable();
             $table->string('last_name');
             $table->string('second_last_name')->nullable();
-            $table->integer('age');
+            $table->date('age');
             $table->unsignedBigInteger('type_id');
             $table->string('identification');
             $table->string('phone');
@@ -32,6 +33,8 @@ class CreateBeneficiariesTable extends Migration
             $table->unsignedBigInteger('zone_id');
             $table->unsignedBigInteger('stratum_id');
             $table->string('email')->unique();
+            $table->string('group');
+            $table->unsignedBigInteger('program_id');
             $table->boolean('active')->default(true);
             $table->timestamps();
             $table->softDeletes();
@@ -43,6 +46,8 @@ class CreateBeneficiariesTable extends Migration
             $table->foreign('stratum_id')->references('id')->on('stratums');
             $table->foreign('condition_id')->references('id')->on('conditions');
             $table->foreign('type_id')->references('id')->on('types');
+            $table->foreign('program_id')->references('id')->on('programs');
+            
         });
     }
 

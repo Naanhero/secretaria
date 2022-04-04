@@ -19,7 +19,7 @@ class BeneficiarySeeder extends Seeder
             'second_name' => 'Lucia',
             'last_name'=>'garcia',
             'second_last_name'=>'cortes',
-            'age'=>42,
+            'age'=>now(),
             'type_id'=> 2,
             'identification'=> '111112234',
             'phone'=>'1234567890',
@@ -32,6 +32,9 @@ class BeneficiarySeeder extends Seeder
             'zone_id'=> 2,
             'stratum_id'=> 3,
             'email'=>'alb@gmail.com',
-            'active'=>1]);
+            'group'=>'Los bloques',
+            'program_id'=>1,
+            'active'=>1
+        ]);
     }
 }

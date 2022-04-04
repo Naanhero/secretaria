@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Beneficiary;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class CreateBeneficiaryRequest extends FormRequest
 {
@@ -28,7 +29,7 @@ class CreateBeneficiaryRequest extends FormRequest
             'second_name' => 'nullable|string|min:3',
             'last_name' => 'required|string|min:3',
             'second_last_name' => 'nullable|string|min:3',
-            'age' => 'required|integer|between:1,100',
+            'age' => 'required|date',
             'type_id' => 'required|exists:types,id',
             'identification' => 'required|string|min:3',
             'phone' => 'required|string|min:10|max:10',
@@ -41,6 +42,8 @@ class CreateBeneficiaryRequest extends FormRequest
             'zone_id' => 'required|exists:zones,id',
             'stratum_id' => 'required|exists:stratums,id',
             'email' => 'required|email',
+            'group' => 'required|string|min:3',
+            'program_id' => 'required|exists:programs,id',
             'active' => 'required|boolean'
         ];
     }
